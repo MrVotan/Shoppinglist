@@ -22,12 +22,12 @@ public class ProductHttpThread extends Thread {
             InputStream is = httpURLConnection.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(is, "utf-8");
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            StringBuffer result = new StringBuffer();
+            StringBuffer stringBuffer = new StringBuffer();
             String temp ;
             while((temp = bufferedReader.readLine()) != null){
-                result.append(temp);
+                stringBuffer.append(temp);
             }
-            setResult(result.toString());
+            setResult(stringBuffer.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
