@@ -2,8 +2,15 @@ package com.example.arsonist.shoppinglist;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+
+import com.example.arsonist.shoppinglist.ProductShowAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -13,7 +20,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //数据，适配器，xml布局
+        List<Product> list = Arrays.asList(
 
+                new Product("title", "$200"),
+                new Product("tisadfstlasfea", "$2200"),
+                new Product("tisaftleb", "$2030"),
+                new Product("tisafstlec", "$1200")
+        );
+        ProductShowAdapter productShowAdapter = new ProductShowAdapter(
+                this,R.layout.product_show_layout, list
+        );
+        ListView listView = (ListView)findViewById(R.id.product_list_view);
+        listView.setAdapter(productShowAdapter);
 
     }
 
