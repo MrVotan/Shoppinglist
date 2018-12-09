@@ -8,8 +8,8 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="85dp"
-        android:src="@drawable/xl"
-        android:id="@+id/img"/>
+        android:id="@+id/product_image_view"
+      />
 
 
    <RelativeLayout
@@ -22,7 +22,7 @@
            android:layout_height="wrap_content"
            android:maxLines="2"
            android:ellipsize="end"
-           android:textSize="22sp"
+           android:textSize="18sp"
            android:enabled="true"
            android:id="@+id/product_title_text_view"
            android:text="asdfsadfsad6556sa4df65adsf4a655a6sdf"
@@ -44,7 +44,7 @@
            android:layout_height="wrap_content"
            android:text="加入购物车"
            android:id="@+id/product_add_shop_btn"
-           android:textSize="26sp"
+           android:textSize="18sp"
            android:layout_alignParentBottom="true"
            android:layout_alignParentRight="true"
            />

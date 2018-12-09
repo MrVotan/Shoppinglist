@@ -1,4 +1,4 @@
-package com.example.arsonist.shoppinglist;
+package com.example.arsonist.shoppinglist.bean;
 
 /**
  * Created by Arsonist on 2018/12/9.
@@ -6,10 +6,36 @@ package com.example.arsonist.shoppinglist;
 public class Product {
     private String title;
     private String price;
+    private String image;
+    private int id;
+    private int num;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
 
     public Product(){
-
-
     }
 
     public Product(String title, String price) {

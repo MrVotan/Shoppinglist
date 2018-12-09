@@ -1,7 +1,6 @@
-package com.example.arsonist.shoppinglist;
+package com.example.arsonist.shoppinglist.adapter;
 
 import android.content.Context;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +8,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.arsonist.shoppinglist.bean.Product;
+
+import com.example.arsonist.shoppinglist.R;
+import com.example.arsonist.shoppinglist.thread.ImageHttpThread;
 
 import java.util.List;
 
 public class ProductShowAdapter extends ArrayAdapter {
     private int resourceId;
-    public ProductShowAdapter( Context context,
+    public ProductShowAdapter(Context context,
                               int resource,
-                               List objects) {
+                              List objects) {
         super(context, resource, objects);
         resourceId = resource;
     }
@@ -31,6 +34,7 @@ public class ProductShowAdapter extends ArrayAdapter {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             productLayout.titleView =(TextView) view.findViewById(R.id.product_title_text_view);
             productLayout.priceView =(TextView) view.findViewById(R.id.product_price_text_view);
+            productLayout.imgView=(ImageView)view.findViewById(R.id.product_image_view);
             view.setTag(productLayout);
         } else {
             view = convertView;
@@ -38,6 +42,15 @@ public class ProductShowAdapter extends ArrayAdapter {
         }
         productLayout.titleView.setText(product.getTitle());
         productLayout.priceView.setText(product.getPrice());
+        ImageHttpThread imageHttpThread = new ImageHttpThread(product.getImage());
+        imageHttpThread.start();
+        try {
+            imageHttpThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        productLayout.imgView.setImageBitmap(imageHttpThread.getResultBitmap());
+
         return view;
     }
 

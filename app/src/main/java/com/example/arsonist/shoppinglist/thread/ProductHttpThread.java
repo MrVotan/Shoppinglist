@@ -1,4 +1,4 @@
-package com.example.arsonist.shoppinglist;
+package com.example.arsonist.shoppinglist.thread;
 
 /**
  * Created by Arsonist on 2018/12/9.
@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ProductHttpThread extends Thread {

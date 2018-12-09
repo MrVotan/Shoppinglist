@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import com.alibaba.fastjson.JSON;
 
-
-import com.example.arsonist.shoppinglist.ProductShowAdapter;
+import com.example.arsonist.shoppinglist.thread.ProductHttpThread;
+import com.example.arsonist.shoppinglist.bean.Product;
+import com.example.arsonist.shoppinglist.adapter.ProductShowAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
