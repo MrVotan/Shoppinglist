@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:src="@drawable/xl"
+        android:id="@+id/img"/>
+
+
+   <RelativeLayout
+       android:layout_width="150dp"
+       android:layout_height="80dp">
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:maxLines="2"
+           android:ellipsize="end"
+           android:textSize="25dp"
+           android:enabled="true"
+           android:id="@+id/title"
+           android:text="asdfsadfsad6556sa4df65adsf4a655a6sdf"
+
+           />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="2000$"
+           android:textColor="#E33365"
+           android:textSize="18sp"
+           android:id="@+id/price"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+
+           />
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="加入购物车"
+           android:id="@+id/add_btn"
+           android:textSize="20dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           />
+
+
+   </RelativeLayout>
+
+
+</LinearLayout>
