@@ -2,6 +2,7 @@ package com.example.arsonist.shoppinglist;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.alibaba.fastjson.JSON;
 
 
 import com.example.arsonist.shoppinglist.ProductShowAdapter;
@@ -21,13 +22,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //数据，适配器，xml布局
-        List<Product> list = Arrays.asList(
-
-                new Product("title", "$200"),
-                new Product("tisadfstlasfea", "$2200"),
-                new Product("tisaftleb", "$2030"),
-                new Product("tisafstlec", "$1200")
-        );
+        ProductHttpThread productHttpThread = new ProductHttpThread();
+        productHttpThread.start();
+        try {
+            productHttpThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        List<Product> list =
+                JSON.parseArray(productHttpThread.getResult(), Product.class);
         ProductShowAdapter productShowAdapter = new ProductShowAdapter(
                 this,R.layout.product_show_layout, list
         );

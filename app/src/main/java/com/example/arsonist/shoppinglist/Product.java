@@ -7,6 +7,11 @@ public class Product {
     private String title;
     private String price;
 
+    public Product(){
+
+
+    }
+
     public Product(String title, String price) {
         this.title = title;
         this.price = price;

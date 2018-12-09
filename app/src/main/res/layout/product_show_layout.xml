@@ -33,7 +33,7 @@
            android:layout_height="wrap_content"
            android:text="2000$"
            android:textColor="#E33365"
-           android:textSize="20sp"
+           android:textSize="18sp"
            android:id="@+id/product_price_text_view"
            android:layout_alignParentBottom="true"
            android:layout_alignParentLeft="true"
