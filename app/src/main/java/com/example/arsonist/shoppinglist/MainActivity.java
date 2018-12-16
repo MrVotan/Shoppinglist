@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //数据，适配器，xml布局
+
         ProductHttpThread productHttpThread = new ProductHttpThread();
         productHttpThread.start();
         try {
