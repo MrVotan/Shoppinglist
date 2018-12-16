@@ -6,19 +6,23 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:id="@+id/product_shopping">
+        android:id="@+id/top_product"
+        android:gravity="center_vertical"
+        android:background="@drawable/product_top_border">
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:id="@+id/btn_back"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:background="@drawable/btn_back"
             />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:id="@+id/shopping_cart"
             android:background="@drawable/shopping"
             />
@@ -29,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/product_list_view"
-        android:layout_below="@+id/product_shopping">
+        android:layout_below="@+id/top_product">
 
     </ListView>
 
